@@ -81,10 +81,13 @@ jobs:
         git clone https://github.com/zxlhhyccc/luci-app-xlnetacc1.06-1.git
         cd luci-app-xlnetacc1.06-1
         sed -i 's/luci-app-xlnetacc/luci-app-xlnetacc-kl/g' ./Makefile
-        cd ~
+        cd ..
+        cd ..
+        cd ..
+        cd ..
         git clone https://github.com/kenzok8/openwrt-packages.git
-        cp -r ~/openwrt-packages/gost ~/openwrt/package/taowazi/
-        cp -r ~/openwrt-packages/luci-app-gost ~/openwrt/package/taowazi/
+        cp -r ~/openwrt-packages/gost ./openwrt/package/taowazi/
+        cp -r ~/openwrt-packages/luci-app-gost ./openwrt/package/taowazi/
         
     - name: Configuration Customization - Build_NanoPi_R2S
       env:
