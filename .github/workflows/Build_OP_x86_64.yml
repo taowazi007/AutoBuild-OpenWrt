@@ -76,7 +76,7 @@ jobs:
         cd luci-app-xlnetacc1.06-1
         sed -i 's/luci-app-xlnetacc/luci-app-xlnetacc-kl/g' ./Makefile
         cd ..
-        git clone https://github.com/kenzok8/openwrt-packages.git ~/openwrt-packages
+        git clone https://github.com/psantiagoantony/Openwrt-packages.git ~/openwrt-packages
         cp -r ~/openwrt-packages/gost ./
         cp -r ~/openwrt-packages/luci-app-gost ./
         
