@@ -65,8 +65,8 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         git clone https://github.com/kenzok8/openwrt-packages.git
         mkdir openwrt/package/taowazi
-        cp -r openwrt-packages/gost  openwrt/package/taowazi
-        cp -r openwrt-packages/luci-app-gost openwrt/package/taowazi
+        cp -r ./openwrt-packages/gost  ./openwrt/package/taowazi
+        cp -r ./openwrt-packages/luci-app-gost ./openwrt/package/taowazi
         cd openwrt
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         
@@ -80,10 +80,9 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/xiaorouji/openwrt-passwall.git package/taowazi
-        git clone https://github.com/zxlhhyccc/luci-app-xlnetacc1.06-1.git package/taowazi
-        cd ./package/taowazi/luci-app-xlnetacc1.06-1
-        sed -i 's/luci-app-xlnetacc/luci-app-xlnetacc-kl/g' ./Makefile
+        git clone https://github.com/xiaorouji/openwrt-passwall.git package/taowazi/passwall
+        git clone https://github.com/zxlhhyccc/luci-app-xlnetacc1.06-1.git package/taowazi/luci-app-xlnetacc1.06-1
+        sed -i 's/luci-app-xlnetacc/luci-app-xlnetacc-kl/g' ./package/taowazi/luci-app-xlnetacc1.06-1Makefile
         
     - name: Configuration Customization - Build_x86_64
       env:
