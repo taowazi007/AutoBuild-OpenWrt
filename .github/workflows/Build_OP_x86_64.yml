@@ -75,10 +75,10 @@ jobs:
         git clone https://github.com/zxlhhyccc/luci-app-xlnetacc1.06-1.git
         cd luci-app-xlnetacc1.06-1
         sed -i 's/luci-app-xlnetacc/luci-app-xlnetacc-kl/g' ./Makefile
-        cd ..
+        cd ~/openwrt
         git clone https://github.com/psantiagoantony/Openwrt-packages.git ~/packages
-        cp -r ~/packages/gost ./
-        cp -r ~/packages/luci-app-gost ./
+        cp -r ~/packages/gost ./package/taowazi
+        cp -r ~/packages/luci-app-gost ./package/taowazi
         
     - name: Update & Install feeds
       working-directory: ./openwrt
