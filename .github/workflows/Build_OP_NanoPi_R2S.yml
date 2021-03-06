@@ -11,12 +11,12 @@ on:
   release:
     types: [published]
 
-  #push:
-  #  branches: 
-  #    - master
+  push:
+    branches: 
+      - master
 
-  schedule:
-    - cron: 0 2 * * 0
+  #schedule:
+  #  - cron: 0 2 * * 0
   
   #watch:
   #  types: [started]
@@ -87,7 +87,6 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
         ./scripts/feeds install -a
         
     - name: Configuration Customization - Build_NanoPi_R2S
